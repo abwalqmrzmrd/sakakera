@@ -11,17 +11,19 @@
         padding: 0;
         overflow: hidden;
         font-family: "Tajawal", sans-serif;
+        background: #000;
         color: #fff;
-        height: 100vh;
-        background: linear-gradient(-45deg, #1e3c72, #2a5298, #00c6ff, #0072ff);
-        background-size: 400% 400%;
-        animation: gradientBG 20s ease infinite;
     }
 
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
+    /* الخلفية الفيديو */
+    #bgVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
     }
 
     /* نص أعلى الصفحة */
@@ -98,11 +100,51 @@
         box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
     }
 
-    #support-section a { text-decoration: none; }
+    /* 🔗 الرابط الأبيض في منتصف الصفحة */
+    #visitLink {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.4);
+        padding: 12px 20px;
+        border-radius: 14px;
+        box-shadow: 0 0 15px #ffffff;
+        z-index: 2000;
+        text-align: center;
+        backdrop-filter: blur(3px);
+    }
+
+    #visitLink a {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #visitLink a:hover {
+        color: #ffeb3b;
+    }
 </style>
 </head>
 
 <body>
+
+<!-- 🔗 رابط زيارة الموقع في منتصف الصفحة -->
+<div id="visitLink">
+  <a href="https://www.sakaker.co" target="_blank">
+    زورنا على موقعنا www.sakaker.co
+  </a>
+</div>
+
+<!-- 🎬 خلفية الفيديو -->
+<iframe id="bgVideo"
+    src="https://www.youtube.com/embed/IpahuwvIDUM?autoplay=1&mute=1&loop=1&playlist=IpahuwvIDUM"
+    width="100%" height="100%"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
 
 <!-- 🔹 نص أعلى الصفحة -->
 <div id="topText">
@@ -125,31 +167,31 @@
   <hr style="border: 1px solid #00ffff; margin:8px 0 10px 0;">
 
   <p style="margin:5px 0; color:#FFD700;">💰 
-    <a href="https://paypal.me/abwalqmrzmrd" target="_blank" style="color:#FFD700;">
+    <a href="https://paypal.me/abwalqmrzmrd" target="_blank" style="color:#FFD700; text-decoration:none;">
       ادعمنا عبر PayPal
     </a>
   </p>
 
   <p style="margin:5px 0;">📧 
-    <a href="mailto:sakakera@gmail.com" style="color:#00ffcc;">
+    <a href="mailto:sakakera@gmail.com" style="color:#00ffcc; text-decoration:none;">
       sakakera@gmail.com
     </a>
   </p>
 
   <p style="margin:5px 0;">⭐ 
-    <a href="https://www.facebook.com/AbwAlqmrZmrd" target="_blank" style="color:#FFD700; font-weight:bold;">
+    <a href="https://www.facebook.com/AbwAlqmrZmrd" target="_blank" style="color:#FFD700; text-decoration:none; font-weight:bold;">
       أبوالقمر زمرد
     </a>
   </p>
 
   <p style="margin:5px 0;">🟩 
-    <a href="https://wa.me/message/BJUPAGNVGZ2KI1" target="_blank" style="color:#00ff99;">
+    <a href="https://wa.me/message/BJUPAGNVGZ2KI1" target="_blank" style="color:#00ff99; text-decoration:none;">
       واتساب مباشر
     </a>
   </p>
 
   <p style="margin:5px 0;">🐦 
-    <a href="https://twitter.com/intent/tweet?text=🌙%20زر%20موقع%20أبوالقمر%20زمرد%20https://sakaker.co" target="_blank" style="color:#1DA1F2;">
+    <a href="https://twitter.com/intent/tweet?text=🌙%20زر%20موقع%20أبوالقمر%20زمرد%20https://sakaker.co" target="_blank" style="color:#1DA1F2; text-decoration:none;">
       شارك عبر تويتر
     </a>
   </p>
